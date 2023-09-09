@@ -1,7 +1,7 @@
 import os
 import sys
 
-from src.caeser import CaeserCipher
+from caeser import CaeserCipher
 
 if __name__ == '__main__':
 
@@ -10,10 +10,9 @@ if __name__ == '__main__':
     # https://docs.python.org/3/howto/argparse.html
     # Extract parameters for execution
     algorithm = sys.argv[1]
-    key = sys.argv[2]
+    key = int(sys.argv[2])
     plain_text = sys.argv[3]
-    crypto = CaeserCipher(key)
-    crypto.key = sys.argv[2]
+    CaeserCipher.caeser_init(key)
 
     # # If the arg is not provided assume we want to Dry Run.
     # try:
@@ -30,6 +29,6 @@ if __name__ == '__main__':
 
     print('plaintext = %s' % plain_text)
     print(os.linesep)
-    print('ciphertext = %s' % crypto.caeser_encrypt(plain_text))
+    print('ciphertext = %s' % CaeserCipher.caeser_encrypt(plain_text))
     print(os.linesep)
     print('decrypted = %s' % plain_text)

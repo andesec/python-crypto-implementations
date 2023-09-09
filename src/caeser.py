@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
 class CaeserCipher:
-    key = None
-    CHARACTERS = ' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_+-=\\|/?.,{}[]`'
+    key = 0
+    CHARACTERS = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ123~!@abcdefghijklmnopqrstuvwxyz456#$%7890^&*()_+-=\\|/?.,{}[]`'
 
-    def __init__(self, key):
-        self.key = key
+    def __init__(self):
+        pass
 
     @classmethod
     def caeser_encrypt(cls, plain_text):
@@ -30,3 +30,7 @@ class CaeserCipher:
             plain_text += cls.CHARACTERS[new_index]
 
         return cipher_text
+
+    @classmethod
+    def caeser_init(cls, key):
+        cls.key = key
