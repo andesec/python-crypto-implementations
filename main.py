@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import argparse
 
-from caeser import CaeserCipher
+from crypto.caeser import CaeserCipher
 
 if __name__ == '__main__':
 
